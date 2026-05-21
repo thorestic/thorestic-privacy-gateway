@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local config and secrets
+configs/*.env
+configs/*.csv
+configs/known-hotspots.txt
+configs/current-mode
+configs/*.bak
+configs/*.backup
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+id_rsa*
+thor_pi_codex_key*
+
+# Runtime data
+logs/
+*.log
+*.pid
+*.sock
+
+# Backups and generated files
+*.backup.*
+*.tmp
+*.swp
+backup-*.tar.gz
+backups/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+

@@ -1,0 +1,17 @@
+[Unit]
+Description=Thorestic Gateway FastAPI Dashboard
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/thorestic-gateway
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/thorestic-gateway/venv/bin/uvicorn web.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+

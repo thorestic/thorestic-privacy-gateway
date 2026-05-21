@@ -1,0 +1,16 @@
+[Unit]
+Description=Thorestic Gateway Network Logger
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/thorestic-gateway
+ExecStart=/usr/bin/python3 /opt/thorestic-gateway/scripts/net-logger.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+
