@@ -124,34 +124,3 @@ Run manually:
 ```bash
 ./venv/bin/uvicorn web.main:app --host 127.0.0.1 --port 8000
 ```
-
-## GitHub Push Rejected
-
-Error:
-
-```text
-non-fast-forward
-fatal: refusing to merge unrelated histories
-```
-
-What happened:
-
-The local repo and GitHub had different first commits.
-
-Fix used:
-
-```bash
-git push --force-with-lease origin main
-```
-
-This was OK here because the GitHub repo only had the older version of the same project.
-
-## Public Repo Safety
-
-Before pushing:
-
-```bash
-rg -n -e "PASSWORD" -e "SECRET" -e "PRIVATE KEY" -e "BEGIN .*KEY" .
-```
-
-Some matches are normal because code has variable names like `PROXY_PASSWORD`. The important thing is that real values are not committed.
