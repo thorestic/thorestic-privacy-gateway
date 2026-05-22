@@ -33,16 +33,15 @@ Network page:
 
 ## Documentation
 
-| File | What it explains |
-| --- | --- |
-| [README.ar.md](README.ar.md) | Arabic version of the main README. |
-| [docs/WHAT_WE_BUILT.md](docs/WHAT_WE_BUILT.md) | What was built and changed in the project. |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the website, FastAPI, scripts, services, and logs work together. |
-| [docs/SETUP.md](docs/SETUP.md) | How to prepare the Raspberry Pi and run the project. |
-| [docs/COMMANDS.md](docs/COMMANDS.md) | Useful commands used while building and debugging. |
-| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Problems I faced and how I fixed them. |
-| [docs/AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md) | How AI helped during the project. |
-| [docs/SECURITY.md](docs/SECURITY.md) | What should not be pushed to a public repo. |
+| English | Arabic | What it explains |
+| --- | --- | --- |
+| [WHAT_WE_BUILT.md](docs/WHAT_WE_BUILT.md) | [WHAT_WE_BUILT.ar.md](docs/WHAT_WE_BUILT.ar.md) | What was built and changed in the project. |
+| [ARCHITECTURE.md](docs/ARCHITECTURE.md) | [ARCHITECTURE.ar.md](docs/ARCHITECTURE.ar.md) | How the website, FastAPI, scripts, services, and logs work together. |
+| [SETUP.md](docs/SETUP.md) | [SETUP.ar.md](docs/SETUP.ar.md) | How to prepare the Raspberry Pi and run the project. |
+| [COMMANDS.md](docs/COMMANDS.md) | [COMMANDS.ar.md](docs/COMMANDS.ar.md) | Useful commands used while building and debugging. |
+| [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | [TROUBLESHOOTING.ar.md](docs/TROUBLESHOOTING.ar.md) | Problems I faced and how I fixed them. |
+| [AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md) | [AI_ASSISTANCE.ar.md](docs/AI_ASSISTANCE.ar.md) | How AI helped during the project. |
+| [SECURITY.md](docs/SECURITY.md) | [SECURITY.ar.md](docs/SECURITY.ar.md) | What should not be pushed to a public repo. |
 
 ## Project Structure
 

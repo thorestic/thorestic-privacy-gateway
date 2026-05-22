@@ -5,6 +5,7 @@
 الفكرة بدأت من إني بدي أخلي Raspberry Pi 4 يشتغل كأنه privacy gateway صغير، وأقدر أتحكم فيه من موقع بدل ما أضل أكتب أوامر من التيرمنال كل مرة.
 
 [English README](README.md)
+
 ## شو هو المشروع؟
 
 المشروع عبارة عن Raspberry Pi gateway فيه:
@@ -32,15 +33,15 @@ Network page:
 
 ## ملفات التوثيق
 
-| الملف | شو فيه |
-| --- | --- |
-| [docs/WHAT_WE_BUILT.md](docs/WHAT_WE_BUILT.md) | شو عملنا وعدلنا بالمشروع. |
-| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | كيف الموقع والـ Python والسكريبتات والخدمات واللوقات مربوطين ببعض. |
-| [docs/SETUP.md](docs/SETUP.md) | كيف تجهز الراسبري وتشغل المشروع. |
-| [docs/COMMANDS.md](docs/COMMANDS.md) | أهم الأوامر اللي استخدمناها. |
-| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | المشاكل اللي ظهرت وكيف انحلت. |
-| [docs/AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md) | كيف الذكاء الاصطناعي ساعد بالمشروع. |
-| [docs/SECURITY.md](docs/SECURITY.md) | شو الأشياء اللي ما لازم تنرفع على GitHub. |
+| عربي | English | شو فيه |
+| --- | --- | --- |
+| [WHAT_WE_BUILT.ar.md](docs/WHAT_WE_BUILT.ar.md) | [WHAT_WE_BUILT.md](docs/WHAT_WE_BUILT.md) | شو عملنا وعدلنا بالمشروع. |
+| [ARCHITECTURE.ar.md](docs/ARCHITECTURE.ar.md) | [ARCHITECTURE.md](docs/ARCHITECTURE.md) | كيف الموقع والـ Python والسكريبتات والخدمات واللوقات مربوطين ببعض. |
+| [SETUP.ar.md](docs/SETUP.ar.md) | [SETUP.md](docs/SETUP.md) | كيف تجهز الراسبري وتشغل المشروع. |
+| [COMMANDS.ar.md](docs/COMMANDS.ar.md) | [COMMANDS.md](docs/COMMANDS.md) | أهم الأوامر اللي استخدمناها. |
+| [TROUBLESHOOTING.ar.md](docs/TROUBLESHOOTING.ar.md) | [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | المشاكل اللي ظهرت وكيف انحلت. |
+| [AI_ASSISTANCE.ar.md](docs/AI_ASSISTANCE.ar.md) | [AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md) | كيف الذكاء الاصطناعي ساعد بالمشروع. |
+| [SECURITY.ar.md](docs/SECURITY.ar.md) | [SECURITY.md](docs/SECURITY.md) | شو الأشياء اللي ما لازم تنرفع على GitHub. |
 
 ## تقسيم المشروع
 
