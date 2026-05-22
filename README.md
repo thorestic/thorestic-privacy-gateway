@@ -6,8 +6,6 @@ I built this because I wanted a Raspberry Pi 4 to work like a small privacy gate
 
 [Read this README in Arabic](README.ar.md)
 
-![Dashboard screenshot](docs/images/dashboard-preview.png)
-
 ## What It Is
 
 Thorestic Privacy Gateway is a Raspberry Pi project that combines:
