@@ -77,5 +77,3 @@ The repo uses real screenshots from the local dashboard UI:
 
 - `docs/images/dashboard-preview.png`
 - `docs/images/network-page.png`
-
-They were taken from a safe local preview, not from private Raspberry Pi data.
