@@ -121,20 +121,3 @@ sudo tail -f /var/log/thorestic-gateway/combined.log
 sudo tail -f /var/log/thorestic-gateway/dns.log
 sudo tail -f /var/log/thorestic-gateway/connections.log
 ```
-
-## GitHub
-
-Push عادي:
-
-```bash
-git push origin main
-```
-
-لو GitHub عليه commit قديم والمحلي صار فيه commit معدل:
-
-```bash
-git push --force-with-lease origin main
-```
-
-استخدم `--force-with-lease` بحذر. هو يستبدل branch البعيد فقط لو ما تغير بشكل مفاجئ.
-
