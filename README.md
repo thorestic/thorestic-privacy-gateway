@@ -40,7 +40,6 @@ Network page:
 | [SETUP.md](docs/SETUP.md) | [SETUP.ar.md](docs/SETUP.ar.md) | How to prepare the Raspberry Pi and run the project. |
 | [COMMANDS.md](docs/COMMANDS.md) | [COMMANDS.ar.md](docs/COMMANDS.ar.md) | Useful commands used while building and debugging. |
 | [TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | [TROUBLESHOOTING.ar.md](docs/TROUBLESHOOTING.ar.md) | Problems I faced and how I fixed them. |
-| [AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md) | [AI_ASSISTANCE.ar.md](docs/AI_ASSISTANCE.ar.md) | How AI helped during the project. |
 | [SECURITY.md](docs/SECURITY.md) | [SECURITY.ar.md](docs/SECURITY.ar.md) | What should not be pushed to a public repo. |
 
 ## Project Structure
