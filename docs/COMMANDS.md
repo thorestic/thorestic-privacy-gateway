@@ -121,19 +121,3 @@ sudo tail -f /var/log/thorestic-gateway/combined.log
 sudo tail -f /var/log/thorestic-gateway/dns.log
 sudo tail -f /var/log/thorestic-gateway/connections.log
 ```
-
-## GitHub
-
-Normal push:
-
-```bash
-git push origin main
-```
-
-If GitHub already has an old first commit and the local repo replaced it with an amended commit:
-
-```bash
-git push --force-with-lease origin main
-```
-
-Use `--force-with-lease` carefully. It replaces the remote branch only if it did not change unexpectedly.
