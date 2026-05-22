@@ -5,9 +5,6 @@
 الفكرة بدأت من إني بدي أخلي Raspberry Pi 4 يشتغل كأنه privacy gateway صغير، وأقدر أتحكم فيه من موقع بدل ما أضل أكتب أوامر من التيرمنال كل مرة.
 
 [English README](README.md)
-
-![صورة الداشبورد](docs/images/dashboard-preview.png)
-
 ## شو هو المشروع؟
 
 المشروع عبارة عن Raspberry Pi gateway فيه:
