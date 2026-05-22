@@ -88,6 +88,6 @@ The files in `configs/` are examples only.
 
 ## AI Help
 
-I used AI as a helper while building this project. It helped me understand Linux networking, write and fix scripts, connect FastAPI routes to shell scripts, debug errors, and prepare the repo for GitHub.
+I used AI as a helper while building this project. It helped me understand Linux networking, write and fix scripts, connect FastAPI routes to shell scripts, debug errors.
 
 I still tested the project on the Raspberry Pi and changed things based on what actually happened on the device.
