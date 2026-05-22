@@ -1,62 +1,52 @@
 # Thorestic Privacy Gateway
 
-This is my first Raspberry Pi networking project.
+My first Raspberry Pi networking project.
 
-The idea was simple at first: I wanted to make a Raspberry Pi 4 work like a small privacy gateway that I can control from a web page, instead of opening the terminal every time I want to change something.
+I built this because I wanted a Raspberry Pi 4 to work like a small privacy gateway that I can control from a web dashboard, not only from terminal commands.
 
-The project became a dashboard that can manage network modes, Wi-Fi uplink, clients, blocking, proxy/Tor pages, QR code settings, and live logs.
+[Read this README in Arabic](README.ar.md)
 
 ![Dashboard screenshot](docs/images/dashboard-preview.png)
 
-## What The Project Does
+## What It Is
 
-Thorestic Gateway runs on a Raspberry Pi. The Pi can sit between a router/client device and the internet.
+Thorestic Privacy Gateway is a Raspberry Pi project that combines:
 
-In my setup, Ethernet is used for the local gateway side, and Wi-Fi can be used as the internet uplink. That means I can connect the Pi to another Wi-Fi network from the dashboard and still keep access to the gateway page.
+- a FastAPI web dashboard
+- Bash scripts for real Linux networking actions
+- Wi-Fi uplink control from the browser
+- Tor/proxy/direct mode pages
+- client blocking and reconnect actions
+- live DNS and connection logs using `tcpdump`
+- Wi-Fi QR code settings
+- public-safe documentation and examples
 
-Main things in the project:
+The Pi can be used between a router/client device and the internet. In my setup, `eth0` is the local gateway side, and `wlan0` can be used as the upstream internet connection.
 
-- Web dashboard built with FastAPI.
-- Bash scripts for real Linux/network actions.
-- Network page to scan and connect to Wi-Fi.
-- Dashboard status icons for services.
-- Tor, Proxy, VPN, Clients, Logs, Blocking, and Settings pages.
-- QR code generator for a selected Wi-Fi network.
-- Live DNS and connection logs using `tcpdump`.
-- Client blocking and disconnect/reconnect actions.
-- Example systemd service files.
+## Screenshots
 
-## Network Page
+Dashboard:
 
-This is the page I added so I can connect the Raspberry Pi to Wi-Fi without needing a monitor.
+![Dashboard screenshot](docs/images/dashboard-preview.png)
+
+Network page:
 
 ![Network page screenshot](docs/images/network-page.png)
 
-## How It Works
+## Documentation
 
-The backend is written in Python with FastAPI.
-
-The website sends requests to API routes, and then FastAPI runs the needed script in the background.
-
-For example, when I click a button to connect to Wi-Fi, the browser does not run the script directly. It calls an API route, and then Python runs something like:
-
-```python
-run_cmd(["sudo", NETWORK_SCRIPT, "connect", ssid, password], timeout=45)
-```
-
-So the flow is:
-
-```text
-Browser button
-  -> FastAPI route
-  -> Python subprocess
-  -> Bash script
-  -> Linux / NetworkManager / system service
-```
+| File | What it explains |
+| --- | --- |
+| [README.ar.md](README.ar.md) | Arabic version of the main README. |
+| [docs/WHAT_WE_BUILT.md](docs/WHAT_WE_BUILT.md) | What was built and changed in the project. |
+| [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) | How the website, FastAPI, scripts, services, and logs work together. |
+| [docs/SETUP.md](docs/SETUP.md) | How to prepare the Raspberry Pi and run the project. |
+| [docs/COMMANDS.md](docs/COMMANDS.md) | Useful commands used while building and debugging. |
+| [docs/TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md) | Problems I faced and how I fixed them. |
+| [docs/AI_ASSISTANCE.md](docs/AI_ASSISTANCE.md) | How AI helped during the project. |
+| [docs/SECURITY.md](docs/SECURITY.md) | What should not be pushed to a public repo. |
 
 ## Project Structure
-
-I split the web files a little so everything is not inside one huge `main.py`.
 
 ```text
 web/
@@ -76,93 +66,11 @@ systemd/
   *.service.example      example service files
 ```
 
-It is still simple, but now the website style and base layout are not mixed directly with all the Python logic.
+At first, almost everything was inside `main.py`. I later split it a little so the UI files are separate from the Python backend, but without making the project too complicated.
 
-## Important Scripts
+## Quick Local Run
 
-| Script | What it does |
-| --- | --- |
-| `auto-hotspot.sh` | Scans Wi-Fi, connects `wlan0`, disconnects Wi-Fi, and can store known hotspots. |
-| `mode-manager.sh` | Changes the gateway mode, like direct, Tor, or proxy mode. |
-| `force-dns.sh` | Forces client DNS traffic through the gateway rules. |
-| `block-manager.sh` | Blocks or unblocks devices/domains depending on the action. |
-| `device-manager.sh` | Disconnects, reconnects, or manages client devices. |
-| `proxy-manager.sh` | Reads and updates proxy settings. |
-| `rotate-proxy.sh` | Rotates between proxy entries. |
-| `build-redsocks-config.sh` | Builds redsocks config from proxy settings. |
-| `net-logger.py` | Uses `tcpdump` to collect DNS and connection logs. |
-| `log-retention-manager.sh` | Handles log cleanup/retention. |
-| `healthcheck.sh` | Basic health check script. |
-| `setup-https.sh` | HTTPS setup helper. |
-
-## Logs
-
-The logging part uses `tcpdump`.
-
-The idea is to watch traffic metadata from the gateway interface and save useful events for the dashboard.
-
-The main log files on the Raspberry Pi are:
-
-```text
-/var/log/thorestic-gateway/dns.log
-/var/log/thorestic-gateway/connections.log
-/var/log/thorestic-gateway/combined.log
-```
-
-The dashboard reads old logs from `/api/logs` and gets live logs from `/stream/logs`.
-
-## Problems I Faced
-
-### Headless setup
-
-I did not have a micro-HDMI screen all the time, so I needed a way to manage the Pi from the website. That is why I added the Network page.
-
-### Wi-Fi connect error
-
-One problem I got was:
-
-```text
-802-11-wireless-security.key-mgmt: property is missing
-```
-
-The fix was to create a clear NetworkManager profile and set `wifi-sec.key-mgmt wpa-psk` when the network has a password.
-
-### QR code problem
-
-The first QR code was not good enough for phone scanning, and it was also using the wrong network idea. I changed it so the QR is based on the Wi-Fi info I set in Settings, and the output is clearer.
-
-### Dashboard controls
-
-At first the dashboard had too many controls in one place. I changed the service row so it works more like status icons, and the real controls stay in their own pages.
-
-### Public repo safety
-
-I had to make sure I do not upload private files. So this repo does not include real config files, passwords, SSH keys, certificates, proxy credentials, or logs.
-
-## AI Help
-
-I used AI while building this project.
-
-It helped me understand parts of Linux networking, write and fix Bash scripts, connect FastAPI routes to scripts, debug errors, and prepare the project for GitHub.
-
-I still tested the project on the Raspberry Pi and changed things based on what actually happened on the device.
-
-## Not Included In This Public Repo
-
-This repo does not include:
-
-- Real Wi-Fi passwords.
-- Real dashboard password hashes.
-- Real proxy credentials.
-- Logs.
-- Certificates.
-- SSH keys.
-- Device backups.
-- Personal network details.
-
-The files in `configs/` are examples only.
-
-## Run Locally For Development
+This only runs the web app. Real gateway actions need a Raspberry Pi with the right network setup and permissions.
 
 ```bash
 python3 -m venv venv
@@ -170,6 +78,20 @@ python3 -m venv venv
 ./venv/bin/uvicorn web.main:app --host 127.0.0.1 --port 8000
 ```
 
-On the Raspberry Pi, system-level actions need the right services, permissions, and `sudoers` rules.
+Then open:
 
-This project is still a learning project, but it works as a real Raspberry Pi experiment and helped me understand a lot more about networking and Linux.
+```text
+http://127.0.0.1:8000
+```
+
+## Privacy Note
+
+This public repo does not include real passwords, Wi-Fi credentials, proxy credentials, logs, certificates, SSH keys, or private backups.
+
+The files in `configs/` are examples only.
+
+## AI Help
+
+I used AI as a helper while building this project. It helped me understand Linux networking, write and fix scripts, connect FastAPI routes to shell scripts, debug errors, and prepare the repo for GitHub.
+
+I still tested the project on the Raspberry Pi and changed things based on what actually happened on the device.
