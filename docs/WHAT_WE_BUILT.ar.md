@@ -77,6 +77,3 @@ web/static/styles.css
 
 - `docs/images/dashboard-preview.png`
 - `docs/images/network-page.png`
-
-الصور مأخوذة من preview محلي آمن، مش من بيانات الراسبري الخاصة.
-
