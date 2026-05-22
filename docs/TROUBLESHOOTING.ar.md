@@ -124,35 +124,3 @@ python3 -m py_compile web/main.py web/ui.py
 ```bash
 ./venv/bin/uvicorn web.main:app --host 127.0.0.1 --port 8000
 ```
-
-## GitHub رفض الـ push
-
-الخطأ:
-
-```text
-non-fast-forward
-fatal: refusing to merge unrelated histories
-```
-
-اللي صار:
-
-الريبو المحلي و GitHub كان عندهم first commits مختلفين.
-
-الحل اللي استخدمناه:
-
-```bash
-git push --force-with-lease origin main
-```
-
-كان مناسب هنا لأن GitHub كان عليه نسخة أقدم من نفس المشروع.
-
-## حماية الريبو public
-
-قبل أي push:
-
-```bash
-rg -n -e "PASSWORD" -e "SECRET" -e "PRIVATE KEY" -e "BEGIN .*KEY" .
-```
-
-مش كل نتيجة معناها مشكلة، لأن الكود فيه أسماء متغيرات مثل `PROXY_PASSWORD`. المهم ما يكون فيه قيم حقيقية.
-
